@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIGHT ONE | FLAP TaxInfo Style</title>
+  <meta name="description" content="LIGHT ONE 纯前端首页，采用 FLAP TaxInfo 风格的数据优先 Dashboard 布局。" />
+  <link rel="icon" type="image/webp" href="./素材/logo.webp" />
+  <link rel="apple-touch-icon" href="./素材/logo.webp" />
+  <link rel="stylesheet" href="./taxinfo.css" />
+</head>
+<body>
+  <div class="tax-shell"></div>
+  <header class="tax-header">
+    <div class="frame nav-frame">
+      <a class="brand" href="#home">
+        <img src="./素材/logo.webp" alt="LIGHT ONE" />
+        <div>
+          <strong>来一根 | LIGHT ONE</strong>
+          <span>FLAP TAXINFO STYLE</span>
+        </div>
+      </a>
+      <div class="nav-side">
+        <div class="socials"><a href="https://x.com/lightone_bsc" target="_blank" rel="noreferrer">X</a><a href="https://t.me/Lightone_bsc" target="_blank" rel="noreferrer">TG</a><a href="#">DC</a></div>
+        <a class="cta-btn" href="https://flap.sh/board" target="_blank" rel="noreferrer">点燃下一根</a>
+      </div>
+    </div>
+  </header>
+  <main class="frame site-main">
+    <section class="hero-panel" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">20 STAGES · COMMUNITY IGNITE · ENDLESS MODE</p>
+        <img class="hero-title-art" src="./素材/首图主标题.webp" alt="行情太冷，来一根" />
+        <div class="hero-strip hero-cta-row"><a class="cta-btn hero-cta" href="https://flap.sh/board" target="_blank" rel="noreferrer">现在来一根</a><a class="ghost-btn hero-cta" href="https://t.me/Lightone_bsc" target="_blank" rel="noreferrer">加入社区</a></div>
+      </div>
+      <div class="hero-visuals">
+        <img class="hero-character" src="./素材/首图主人物.webp" alt="LIGHT ONE 首图主人物" />
+        <img class="hero-fomo" src="./素材/fomo来一根.webp" alt="FOMO 来一根" />
+      </div>
+    </section>
+    <section class="section-block mechanics-panel" id="mechanics">
+      <div class="mechanics-title">核心机制</div>
+      <div class="mechanic-grid">
+        <article class="mechanic-card"><div class="mechanic-icon"><img src="./素材/1/20根烟.webp" alt="20 根烟" /></div><div class="mechanic-body"><h3>20 根烟</h3><b>20 个阶段</b><p>20 个市值门槛逐级推进，每点燃一根，进程更进一步。</p></div></article>
+        <article class="mechanic-card"><div class="mechanic-icon"><img src="./素材/1/社区点燃.webp" alt="社区点燃" /></div><div class="mechanic-body"><h3>社区点燃</h3><b>一起飞</b><p>社区共同点燃每一阶段，强化共识和传播效率。</p></div></article>
+        <article class="mechanic-card"><div class="mechanic-icon"><img src="./素材/1/质押分红.webp" alt="质押分红" /></div><div class="mechanic-body"><h3>质押分红</h3><b>越囤越久</b><p>持有 $LIGHT 并参与质押，即可分享收益，长期受益。</p></div></article>
+        <article class="mechanic-card"><div class="mechanic-icon"><img src="./素材/1/回购销毁.webp" alt="回购销毁" /></div><div class="mechanic-body"><h3>回购销毁</h3><b>持续通缩</b><p>平台收入用于回购并销毁，通缩逻辑持续强化。</p></div></article>
+        <article class="mechanic-card"><div class="mechanic-icon"><img src="./素材/1/幸运金库.webp" alt="幸运金库" /></div><div class="mechanic-body"><h3>Lucky Vault</h3><b>彩蛋玩法</b><p>彩蛋玩法引爆高潮，阶段触发更具张力。</p></div></article>
+        <article class="mechanic-card"><div class="mechanic-icon"><img src="./素材/1/终局模式.webp" alt="终局模式" /></div><div class="mechanic-body"><h3>Endless 模式</h3><b>持续分红</b><p>20 根烧完后进入 Endless，分红不止，机制不停。</p></div></article>
+      </div>
+    </section>
+    <section class="section-block progress-block" id="progress">
+      <div class="progress-title">阶段进度</div>
+      <div class="stage-track" id="stageTrack"></div>
+      <div class="progress-summary">
+        <div><span>当前阶段</span><strong id="currentStageValue">读取中</strong></div>
+        <div><span>当前市值 / 下一阶段目标（K）</span><strong id="marketCapValue">读取中</strong></div>
+        <div><span>当前完成度</span><strong id="progressValue">--</strong></div>
+      </div>
+      <div class="progress-bar"><i id="progressBarFill" style="width:0%"></i></div>
+    </section>
+    <section class="interactive-layout" id="interactive">
+      <div class="section-block vault-data-panel" id="staking">
+        <div class="vault-data-title">金库数据</div>
+        <div class="vault-stats-grid">
+          <article class="vault-stat-card"><span>待分给质押者</span><strong id="pendingStakingValue">--</strong><small>BNB</small></article>
+          <article class="vault-stat-card"><span>待用于回购销毁</span><strong id="pendingBuybackValue">--</strong><small>BNB</small></article>
+          <article class="vault-stat-card"><span>待补进流动池</span><strong id="pendingLPValue">--</strong><small>BNB</small></article>
+          <article class="vault-stat-card"><span>幸运金库待释放</span><strong id="luckyVaultValue">--</strong><small>BNB</small></article>
+          <article class="vault-stat-card"><span>累计收税</span><strong id="totalTaxValue">--</strong><small>BNB</small></article>
+          <article class="vault-stat-card"><span>已销毁代币</span><strong id="burnedTokenValue">--</strong><small id="burnedTokenUnit">TOKEN</small></article>
+        </div>
+        <div class="vault-data-subtitle">当前参与情况</div>
+        <div class="vault-stats-grid vault-stats-grid-secondary">
+          <article class="vault-stat-card"><span>当前总权重</span><strong id="totalWeightValue">--</strong><small>weight</small></article>
+          <article class="vault-stat-card"><span>当前总质押</span><strong id="totalStakedValue">--</strong><small id="totalStakedUnit">TOKEN</small></article>
+          <article class="vault-stat-card"><span>参与质押人数</span><strong id="stakerCountValue">--</strong><small>个地址</small></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+  <script src="./taxinfo.js"></script>
+</body>
+</html>

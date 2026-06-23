@@ -2,7 +2,7 @@
 const MAINNET_FACTORY = "0x1Be5b00B731F08f6A4892c8046d4D1dF68F9D81a";
 const MAINNET_RPC = "https://bsc-dataseed.binance.org/";
 
-const MAINNET_VAULT = "";
+const MAINNET_VAULT = "0x540AB9b2834162e8797525eDac02F51E13ac3357";
 
 const FACTORY_ABI = [
   "event LightOneVaultDeployed(address indexed vault,address indexed taxToken,address indexed lpPair,address creator)",
